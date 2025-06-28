@@ -66,6 +66,10 @@ For ease of use, we provide a docker image which contains the simulator. Our doc
  docker run -it -v ${YOUR TRACE DIRECTORY}:/trace sunnyszy/webcachesim ${traceFile} ${cacheType} ${cacheSize} [--param=value]
 ```
 Alternatively, you may follow the [instruction](INSTALL.md) to manually install the simulator.
+jzx注1: mongo第三方库安装失败，可以删除与mongo相关的代码，mongodb只是用来存储算法输出结果，对流程影响不大， 输出结果可以直接打印输出
+jzx注2: 原始wiki数据集没有cost。所以需要我们为每条数据生成模拟的cost。论文中生成两个模拟数据集，相关参数如下:
+      数据集1:--enable_trace_format_check=0 --min_ratio=20  --delta_ratio=250 --fixed_byte=10240 --cost_threshold=6710886 --memory_window=6710886
+      数据集2:--enable_trace_format_check=0 --min_ratio=40  --delta_ratio=25000 --fixed_byte=102 --cost_threshold=6710886 --memory_window=6710886
 
 ### Common issues
 
